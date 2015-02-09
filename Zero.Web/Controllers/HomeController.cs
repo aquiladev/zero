@@ -6,10 +6,6 @@ namespace Zero.Web.Controllers
 	{
 		public ActionResult Index()
 		{
-			if (Request.IsAuthenticated)
-			{
-				return RedirectToAction("Index", "Tfs");
-			}
 			return View();
 		}
 	}

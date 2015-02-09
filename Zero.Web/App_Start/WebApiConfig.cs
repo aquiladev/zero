@@ -1,4 +1,7 @@
 ﻿using System.Web.Http;
+using System.Web.Http.Dispatcher;
+using System.Web.Http.OData.Extensions;
+using Zero.Core.Http;
 
 namespace Zero.Web
 {
@@ -8,9 +11,16 @@ namespace Zero.Web
 		{
 			config.Routes.MapHttpRoute(
 				name: "DefaultApi",
-				routeTemplate: "api/{controller}/{id}",
+				routeTemplate: "api/{controller}/{action}/{id}",
+				constraints: null,
+				handler: new ContentMd5Handler
+				{
+					InnerHandler = new HttpControllerDispatcher(config)
+				},
 				defaults: new { id = RouteParameter.Optional }
 			);
+
+			config.AddODataQueryFilter();
 		}
 	}
 }
