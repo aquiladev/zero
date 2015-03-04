@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zero.Web", "Zero.Web\Zero.Web.csproj", "{184EEC98-9016-4D42-9B5D-39C9B7EAD9C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zero.Api", "Zero.Api\Zero.Api.csproj", "{184EEC98-9016-4D42-9B5D-39C9B7EAD9C9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{1899ACA9-2FFB-4EB3-A56F-CC4D04C6A6E9}"
 	ProjectSection(SolutionItems) = preProject
