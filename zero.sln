@@ -15,9 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{1899AC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zero.Core", "Zero.Core\Zero.Core.csproj", "{2FB02044-F925-41A4-AF3F-2D88498E9F54}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared files", "Shared files", "{8761F219-CB84-43CD-B6E4-FF4802C4B377}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{8761F219-CB84-43CD-B6E4-FF4802C4B377}"
 	ProjectSection(SolutionItems) = preProject
-		Shared files\GlobalAssemblyInfo.cs = Shared files\GlobalAssemblyInfo.cs
+		Shared\ZAssemblyInfo.cs = Shared\ZAssemblyInfo.cs
 	EndProjectSection
 EndProject
 Global

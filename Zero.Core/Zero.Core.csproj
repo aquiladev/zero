@@ -61,8 +61,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Shared files\GlobalAssemblyInfo.cs">
-      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    <Compile Include="..\Shared\ZAssemblyInfo.cs">
+      <Link>Properties\ZAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Domain\ZPrincipal.cs" />
     <Compile Include="Mvc\AuthConfiguration.cs" />
