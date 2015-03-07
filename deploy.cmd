@@ -27,7 +27,7 @@ IF NOT DEFINED DEPLOYMENT_SOURCE (
 )
 
 IF NOT DEFINED DEPLOYMENT_TARGET (
-  SET DEPLOYMENT_TARGET=%ARTIFACTS%\wwwroot
+  SET DEPLOYMENT_TARGET=%ARTIFACTS%\wwwroot\api
 )
 
 IF NOT DEFINED NEXT_MANIFEST_PATH (
@@ -66,7 +66,6 @@ IF NOT DEFINED MSBUILD_PATH (
 :: ----------
 
 echo Handling .NET Web Application deployment.
-echo Hi Aquila!
 
 :: 1. Restore NuGet packages
 IF /I "zero.sln" NEQ "" (
