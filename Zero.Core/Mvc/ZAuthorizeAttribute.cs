@@ -40,12 +40,7 @@ namespace Zero.Core.Mvc
 				throw new ArgumentNullException("actionContext");
 			}
 			
-			if (principal == null)
-			{
-				return false;
-			}
-
-			return true;
+			return principal != null;
 		}
 
 		protected virtual void HandleUnauthorizedRequest(HttpActionContext actionContext)
@@ -60,14 +55,16 @@ namespace Zero.Core.Mvc
 
 		private ZPrincipal GetPrincipal(HttpActionContext actionContext)
 		{
-			if (!actionContext.Request.Headers.Contains(AuthConfiguration.AuthHeader))
+			try
+			{
+				string authHeader = actionContext.Request.Headers.GetValues(AuthConfiguration.AuthHeader).First();
+				var result = Rijndael.Decrypt(authHeader, Rijndael.GetRandomKeyText());
+				return JsonConvert.DeserializeObject<ZPrincipal>(result);
+			}
+			catch (Exception)
 			{
 				return null;
 			}
-
-			string authHeader = actionContext.Request.Headers.GetValues(AuthConfiguration.AuthHeader).First();
-			var result = Rijndael.Decrypt(authHeader, Rijndael.GetRandomKeyText());
-			return JsonConvert.DeserializeObject<ZPrincipal>(result);
 		}
 
 		private void SetPrincipal(HttpActionContext actionContext, ZPrincipal principal)
